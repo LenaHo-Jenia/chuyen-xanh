@@ -217,7 +217,7 @@ Khóa bí mật chỉ nằm trên Vercel và trong `.env.local` trên máy, **kh
 | Giá mẫu trong máy tính chi phí | `DEFAULT_COST` trong `src/lib/cost.ts` |
 | Số câu tối thiểu để hiện câu hỏi nổi bật | biến môi trường `TOP_QUESTIONS_MIN` (mặc định 10) |
 
-Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md), chạy `npm test`, và đổi `VERSION` trong `public/sw.js` để người đã cài ứng dụng nhận bản mới. Bản web tĩnh đầu tiên được giữ ở tag [`v1-static`](../../tree/v1-static).
+Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md), chạy `npm test`, và đổi `VERSION` trong `public/sw.js` để người đã cài ứng dụng nhận bản mới. Bản web tĩnh đầu tiên (một file HTML) vẫn xem được ở [commit c6f9272](https://github.com/LenaHo-Jenia/chuyen-xanh/tree/c6f9272).
 
 ## Ghi công và giấy phép
 
