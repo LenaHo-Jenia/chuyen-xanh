@@ -1,0 +1,362 @@
+{
+  "updated": "2026-11-12",
+  "source": "lez",
+  "pilotStart": "2026-07-01",
+  "phases": [
+    {
+      "id": 0,
+      "name": {
+        "vi": "trước thí điểm",
+        "en": "before the pilot"
+      }
+    },
+    {
+      "id": 1,
+      "name": {
+        "vi": "giai đoạn 1 (1/7 – 31/12/2026)",
+        "en": "phase 1 (1 Jul – 31 Dec 2026)"
+      },
+      "year": 2026,
+      "label": {
+        "vi": "1/7 – 31/12/2026",
+        "en": "1 Jul – 31 Dec 2026"
+      },
+      "sample": "2026-09-01T10:00"
+    },
+    {
+      "id": 2,
+      "name": {
+        "vi": "giai đoạn 2 (năm 2027)",
+        "en": "phase 2 (2027)"
+      },
+      "year": 2027,
+      "label": {
+        "vi": "Năm 2027",
+        "en": "2027"
+      },
+      "sample": "2027-06-01T10:00"
+    },
+    {
+      "id": 3,
+      "name": {
+        "vi": "giai đoạn 3 (từ 1/1/2028)",
+        "en": "phase 3 (from 1 Jan 2028)"
+      },
+      "year": 2028,
+      "label": {
+        "vi": "Từ 2028",
+        "en": "From 2028"
+      },
+      "sample": "2028-06-01T10:00"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "xm_xang",
+      "label": {
+        "vi": "Xe máy xăng",
+        "en": "Petrol motorbike"
+      },
+      "note": {
+        "vi": "Đi lại cá nhân",
+        "en": "Personal use"
+      },
+      "canBeOld": true
+    },
+    {
+      "id": "xm_app",
+      "label": {
+        "vi": "Xe máy xăng chạy app",
+        "en": "Petrol bike on an app"
+      },
+      "note": {
+        "vi": "Xe ôm công nghệ, giao hàng",
+        "en": "Ride-hailing, delivery"
+      },
+      "canBeOld": false
+    },
+    {
+      "id": "xm_dien",
+      "label": {
+        "vi": "Xe máy điện",
+        "en": "Electric scooter"
+      },
+      "note": {
+        "vi": "Kể cả xe đạp điện",
+        "en": "Including e-bikes"
+      },
+      "canBeOld": false
+    },
+    {
+      "id": "oto",
+      "label": {
+        "vi": "Ô tô xăng, dầu",
+        "en": "Petrol or diesel car"
+      },
+      "note": {
+        "vi": "Cá nhân, dưới 16 chỗ",
+        "en": "Private, under 16 seats"
+      },
+      "canBeOld": false
+    }
+  ],
+  "areas": [
+    {
+      "id": "kv1",
+      "from": 1,
+      "label": {
+        "vi": "Khu vực 1, phường Hoàn Kiếm",
+        "en": "Zone 1, Hoan Kiem ward"
+      }
+    },
+    {
+      "id": "kv2",
+      "from": 1,
+      "label": {
+        "vi": "Khu vực 2, phường Hoàn Kiếm",
+        "en": "Zone 2, Hoan Kiem ward"
+      }
+    },
+    {
+      "id": "kv3",
+      "from": 2,
+      "label": {
+        "vi": "Khu vực 3, phường Hoàn Kiếm và Cửa Nam",
+        "en": "Zone 3, Hoan Kiem and Cua Nam wards"
+      }
+    },
+    {
+      "id": "vd1",
+      "from": 3,
+      "label": {
+        "vi": "Phường khác trong Vành đai 1",
+        "en": "Other wards inside Ring Road 1"
+      }
+    },
+    {
+      "id": "out",
+      "from": 99,
+      "label": {
+        "vi": "Ngoài Vành đai 1",
+        "en": "Outside Ring Road 1"
+      }
+    }
+  ],
+  "curfew": {
+    "area": "kv1",
+    "days": [
+      5,
+      6,
+      0
+    ],
+    "fromHour": 19,
+    "outcome": "kv1_curfew"
+  },
+  "notYet": {
+    "2": "not_yet_2027",
+    "3": "not_yet_2028",
+    "99": "outside"
+  },
+  "matrix": {
+    "xm_dien": {
+      "1": "ev_ok",
+      "2": "ev_ok",
+      "3": "ev_ok"
+    },
+    "xm_app": {
+      "1": "app_limit",
+      "2": "app_ban",
+      "3": "app_ban"
+    },
+    "xm_xang": {
+      "1": {
+        "old": "petrol_old",
+        "default": "petrol_ok"
+      },
+      "2": {
+        "old": "petrol_old",
+        "default": "petrol_ok_2027"
+      },
+      "3": "petrol_level3"
+    },
+    "oto": {
+      "1": "car_ok",
+      "2": "car_level4",
+      "3": "car_level4"
+    }
+  },
+  "outcomes": {
+    "pre_pilot": {
+      "level": "ok",
+      "title": {
+        "vi": "Chưa áp dụng hạn chế",
+        "en": "No restrictions yet"
+      },
+      "detail": {
+        "vi": "Vùng phát thải thấp bắt đầu thí điểm từ 1/7/2026.",
+        "en": "The low emission zone pilot starts on 1 July 2026."
+      }
+    },
+    "kv1_curfew": {
+      "level": "ban",
+      "title": {
+        "vi": "Khu vực 1 đang cấm mọi phương tiện",
+        "en": "Zone 1 is closed to all vehicles right now"
+      },
+      "detail": {
+        "vi": "Từ 19h đến 24h thứ Sáu, thứ Bảy và Chủ nhật, Khu vực 1 cấm xe mô tô, xe gắn máy và ô tô, kể cả xe điện. Chỉ xe ưu tiên theo quy định được hoạt động. Hãy gửi xe bên ngoài và đi bộ vào.",
+        "en": "From 19:00 to 24:00 on Fridays, Saturdays and Sundays, Zone 1 bans motorcycles, mopeds and cars, including electric ones. Only priority vehicles may operate. Park outside and walk in."
+      }
+    },
+    "not_yet_2027": {
+      "level": "ok",
+      "title": {
+        "vi": "Chưa có hạn chế ở khu vực này",
+        "en": "No restrictions in this area yet"
+      },
+      "detail": {
+        "vi": "Khu vực này nằm trong lộ trình mở rộng từ 1/1/2027. Xem lộ trình để chuẩn bị trước.",
+        "en": "This area joins the scheme from 1 Jan 2027. See the timeline to prepare."
+      }
+    },
+    "not_yet_2028": {
+      "level": "ok",
+      "title": {
+        "vi": "Chưa có hạn chế ở khu vực này",
+        "en": "No restrictions in this area yet"
+      },
+      "detail": {
+        "vi": "Khu vực này nằm trong lộ trình mở rộng từ 1/1/2028. Xem lộ trình để chuẩn bị trước.",
+        "en": "This area joins the scheme from 1 Jan 2028. See the timeline to prepare."
+      }
+    },
+    "outside": {
+      "level": "ok",
+      "title": {
+        "vi": "Chưa có hạn chế ở khu vực này",
+        "en": "No restrictions in this area yet"
+      },
+      "detail": {
+        "vi": "Đề án hiện chỉ áp dụng trong Vành đai 1. Thành phố sẽ đánh giá và có thể mở rộng phạm vi sau này.",
+        "en": "The scheme currently applies only inside Ring Road 1. The city will review it and may expand it later."
+      }
+    },
+    "ev_ok": {
+      "level": "ok",
+      "title": {
+        "vi": "Xe điện được lưu thông",
+        "en": "Electric vehicles are allowed"
+      },
+      "detail": {
+        "vi": "Xe không phát thải không thuộc diện hạn chế, trừ lệnh cấm mọi phương tiện ở Khu vực 1 tối thứ Sáu đến Chủ nhật.",
+        "en": "Zero-emission vehicles are not restricted, except during the all-vehicle ban in Zone 1 on Friday to Sunday evenings."
+      }
+    },
+    "app_limit": {
+      "level": "limit",
+      "title": {
+        "vi": "Được chạy, nhưng thuộc diện khuyến khích hạn chế",
+        "en": "Allowed, but discouraged"
+      },
+      "detail": {
+        "vi": "Trong năm 2026, thành phố khuyến khích hạn chế xe máy xăng chạy ứng dụng ở khu vực này, và khuyến khích các ứng dụng điều hướng xe. Từ 1/1/2027, loại xe này không được lưu thông trong các khu vực thuộc phường Hoàn Kiếm và Cửa Nam.",
+        "en": "In 2026 the city discourages petrol bikes working on ride-hailing and delivery apps in this area, and encourages apps to route them elsewhere. From 1 Jan 2027, these vehicles may not operate in the areas of Hoan Kiem and Cua Nam wards."
+      }
+    },
+    "app_ban": {
+      "level": "ban",
+      "title": {
+        "vi": "Không được chạy xe máy xăng qua ứng dụng ở đây",
+        "en": "Petrol bikes on apps are not allowed here"
+      },
+      "detail": {
+        "vi": "Xe máy xăng hoạt động kinh doanh trên nền tảng ứng dụng không được phép lưu thông trong khu vực này. Ứng dụng có trách nhiệm điều hướng xe.",
+        "en": "Petrol motorbikes working on app platforms may not operate in this area. Apps are responsible for routing them elsewhere."
+      }
+    },
+    "petrol_level3": {
+      "level": "cond",
+      "title": {
+        "vi": "Chỉ được đi nếu xe đạt chuẩn khí thải mức 3",
+        "en": "Allowed only if your bike meets emission level 3"
+      },
+      "detail": {
+        "vi": "Từ 1/1/2028, xe mô tô, xe gắn máy không đạt quy chuẩn khí thải mức 3 (QCVN 99:2025/BNNMT) không được lưu thông trong Vành đai 1.",
+        "en": "From 1 Jan 2028, motorcycles and mopeds that do not meet emission standard level 3 (QCVN 99:2025/BNNMT) may not operate inside Ring Road 1."
+      }
+    },
+    "petrol_old": {
+      "level": "limit",
+      "title": {
+        "vi": "Được đi, nhưng xe cũ thuộc diện khuyến khích hạn chế",
+        "en": "Allowed, but older vehicles are discouraged"
+      },
+      "detail": {
+        "vi": "Thành phố khuyến khích hạn chế lưu thông mô tô sản xuất trước 2008 và xe gắn máy sản xuất trước 2016, đồng thời khuyến khích chuyển sang phương tiện xanh.",
+        "en": "The city discourages motorcycles made before 2008 and mopeds made before 2016, and encourages switching to cleaner transport."
+      }
+    },
+    "petrol_ok_2027": {
+      "level": "ok",
+      "title": {
+        "vi": "Được đi",
+        "en": "Allowed"
+      },
+      "detail": {
+        "vi": "Thành phố khuyến khích chuyển sang phương tiện xanh hoặc xe đạt chuẩn khí thải từ mức 3. Từ 1/1/2028, xe phải đạt mức 3 mới được đi trong Vành đai 1.",
+        "en": "The city encourages switching to clean vehicles or ones meeting emission level 3 or higher. From 1 Jan 2028, bikes must meet level 3 to ride inside Ring Road 1."
+      }
+    },
+    "petrol_ok": {
+      "level": "ok",
+      "title": {
+        "vi": "Được đi",
+        "en": "Allowed"
+      },
+      "detail": {
+        "vi": "Thành phố khuyến khích dùng giao thông công cộng và chuyển sang phương tiện xanh.",
+        "en": "The city encourages using public transport and switching to cleaner vehicles."
+      }
+    },
+    "car_ok": {
+      "level": "ok",
+      "title": {
+        "vi": "Được đi",
+        "en": "Allowed"
+      },
+      "detail": {
+        "vi": "Năm 2026, ô tô dưới 16 chỗ được khuyến khích chuyển sang năng lượng sạch hoặc xe đạt chuẩn khí thải từ mức 4.",
+        "en": "In 2026, cars under 16 seats are encouraged to switch to clean energy or vehicles meeting emission level 4 or higher."
+      }
+    },
+    "car_level4": {
+      "level": "cond",
+      "title": {
+        "vi": "Chỉ được đi nếu xe đạt chuẩn khí thải mức 4",
+        "en": "Allowed only if your car meets emission level 4"
+      },
+      "detail": {
+        "vi": "Ô tô dùng xăng, dầu không đạt quy chuẩn khí thải mức 4 (QCVN 85:2025/BNNMT) không được lưu thông trong khu vực này.",
+        "en": "Petrol and diesel cars that do not meet emission standard level 4 (QCVN 85:2025/BNNMT) may not operate in this area."
+      }
+    }
+  },
+  "levels": {
+    "ok": {
+      "vi": "Được đi",
+      "en": "Allowed"
+    },
+    "limit": {
+      "vi": "Khuyến khích hạn chế",
+      "en": "Discouraged"
+    },
+    "cond": {
+      "vi": "Có điều kiện",
+      "en": "Conditional"
+    },
+    "ban": {
+      "vi": "Không được đi",
+      "en": "Not allowed"
+    }
+  }
+}

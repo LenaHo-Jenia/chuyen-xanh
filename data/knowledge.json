@@ -1,0 +1,297 @@
+[
+  {
+    "id": "scope-2026",
+    "faq": true,
+    "q": {
+      "vi": "Từ 1/7/2026, Hà Nội đã cấm xe máy xăng trong toàn bộ Vành đai 1 chưa?",
+      "en": "Since 1 July 2026, are petrol motorbikes banned across all of Ring Road 1?"
+    },
+    "a": {
+      "vi": "Chưa. Giai đoạn 1 (1/7 – 31/12/2026) chỉ áp dụng biện pháp cụ thể ở Khu vực 1 và Khu vực 2 thuộc phường Hoàn Kiếm, theo loại xe và khung giờ. Phạm vi và yêu cầu khí thải được mở rộng dần từ 2027 và 2028.",
+      "en": "No. Phase 1 (1 Jul – 31 Dec 2026) applies specific measures only in Zones 1 and 2 of Hoan Kiem ward, by vehicle type and time of day. The area and emission requirements expand gradually from 2027 and 2028."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp trong Vành đai 1",
+      "en": "Ring Road 1 Low Emission Zone Scheme"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "wards",
+    "faq": true,
+    "q": {
+      "vi": "Vành đai 1 gồm những phường nào?",
+      "en": "Which wards are inside Ring Road 1?"
+    },
+    "a": {
+      "vi": "9 phường: Hoàn Kiếm, Cửa Nam, Ba Đình, Giảng Võ, Ngọc Hà, Tây Hồ, Ô Chợ Dừa, Hai Bà Trưng và Văn Miếu – Quốc Tử Giám. Ranh giới chi tiết nằm trong bản đồ kèm Quyết định 3273/QĐ-UBND ngày 29/6/2026.",
+      "en": "Nine wards: Hoan Kiem, Cua Nam, Ba Dinh, Giang Vo, Ngoc Ha, Tay Ho, O Cho Dua, Hai Ba Trung and Van Mieu – Quoc Tu Giam. Detailed boundaries are in the map attached to Decision 3273/QĐ-UBND of 29 June 2026."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp; Quyết định 3273/QĐ-UBND",
+      "en": "Low Emission Zone Scheme; Decision 3273/QĐ-UBND"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "kv1-curfew",
+    "faq": true,
+    "q": {
+      "vi": "Khu vực 1 bị cấm xe vào lúc nào? Xe điện có bị cấm không?",
+      "en": "When is Zone 1 closed to vehicles? Are electric vehicles banned too?"
+    },
+    "a": {
+      "vi": "Từ 19h đến 24h thứ Sáu, thứ Bảy và Chủ nhật hằng tuần, Khu vực 1 cấm mọi xe mô tô, xe gắn máy và ô tô, kể cả xe điện. Chỉ xe ưu tiên theo quy định được hoạt động. Quy định này áp dụng xuyên suốt các giai đoạn.",
+      "en": "From 19:00 to 24:00 every Friday, Saturday and Sunday, Zone 1 bans all motorcycles, mopeds and cars, including electric ones. Only priority vehicles may operate. This rule applies in every phase."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, quy định áp dụng xuyên suốt",
+      "en": "Low Emission Zone Scheme, rule applying in all phases"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "app-drivers",
+    "faq": true,
+    "q": {
+      "vi": "Tôi chạy xe ôm công nghệ hoặc giao hàng bằng xe máy xăng thì sao?",
+      "en": "I ride for a ride-hailing or delivery app on a petrol motorbike. What changes?"
+    },
+    "a": {
+      "vi": "Năm 2026: thuộc diện khuyến khích hạn chế ở Khu vực 1, 2 phường Hoàn Kiếm, ứng dụng được khuyến khích điều hướng xe. Năm 2027: không được lưu thông trong các khu vực thuộc phường Hoàn Kiếm và Cửa Nam. Từ 2028: không được lưu thông trong toàn bộ Vành đai 1.",
+      "en": "2026: discouraged in Zones 1 and 2 of Hoan Kiem ward, and apps are encouraged to route drivers elsewhere. 2027: not allowed in the areas of Hoan Kiem and Cua Nam wards. From 2028: not allowed anywhere inside Ring Road 1."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, giai đoạn 1 đến 3",
+      "en": "Low Emission Zone Scheme, phases 1 to 3"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "petrol-2028",
+    "faq": true,
+    "q": {
+      "vi": "Năm 2028, xe máy xăng cá nhân của tôi còn đi trong Vành đai 1 được không?",
+      "en": "In 2028, can I still ride my own petrol motorbike inside Ring Road 1?"
+    },
+    "a": {
+      "vi": "Được nếu xe đạt quy chuẩn khí thải mức 3 theo QCVN 99:2025/BNNMT. Xe không đạt mức này sẽ không được lưu thông trong Vành đai 1 từ 1/1/2028.",
+      "en": "Yes, if it meets emission standard level 3 under QCVN 99:2025/BNNMT. Bikes that don't meet it may not operate inside Ring Road 1 from 1 Jan 2028."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, giai đoạn 3",
+      "en": "Low Emission Zone Scheme, phase 3"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "old-vehicles",
+    "faq": true,
+    "q": {
+      "vi": "Xe cũ thế nào thì thuộc diện khuyến khích hạn chế?",
+      "en": "Which older vehicles are discouraged?"
+    },
+    "a": {
+      "vi": "Mô tô sản xuất hoặc nhập khẩu trước năm 2008 và xe gắn máy sản xuất hoặc nhập khẩu trước năm 2016. Đây là khuyến khích, chưa phải lệnh cấm, trong giai đoạn 2026 – 2027.",
+      "en": "Motorcycles made or imported before 2008 and mopeds made or imported before 2016. In 2026–2027 this is a recommendation, not a ban."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, giai đoạn 1 và 2",
+      "en": "Low Emission Zone Scheme, phases 1 and 2"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "cars",
+    "faq": true,
+    "q": {
+      "vi": "Ô tô cá nhân bị ảnh hưởng thế nào?",
+      "en": "How are private cars affected?"
+    },
+    "a": {
+      "vi": "Năm 2026 chỉ là khuyến khích. Từ 2027, ô tô xăng, dầu không đạt quy chuẩn khí thải mức 4 (QCVN 85:2025/BNNMT) không được lưu thông trong các khu vực thuộc phường Hoàn Kiếm và Cửa Nam; từ 2028 áp dụng cho toàn bộ Vành đai 1.",
+      "en": "2026 is encouragement only. From 2027, petrol and diesel cars that do not meet emission standard level 4 (QCVN 85:2025/BNNMT) may not operate in the areas of Hoan Kiem and Cua Nam wards; from 2028 this applies to all of Ring Road 1."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, giai đoạn 2 và 3",
+      "en": "Low Emission Zone Scheme, phases 2 and 3"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "trucks",
+    "faq": true,
+    "q": {
+      "vi": "Xe tải chở hàng vào trung tâm có bị giới hạn giờ không?",
+      "en": "Are delivery trucks limited to certain hours?"
+    },
+    "a": {
+      "vi": "Có. Năm 2026: xe tải dưới 2 tấn chỉ hoạt động ngoài giờ cao điểm; xe từ 2 đến 3,5 tấn và trên 3,5 tấn chỉ hoạt động từ 21h đến 6h sáng hôm sau, trừ khi được cơ quan có thẩm quyền chấp thuận bằng văn bản. Từ 2027, xe trên 3,5 tấn bị cấm hoàn toàn trong khu vực.",
+      "en": "Yes. In 2026, trucks under 2 tonnes may operate only outside peak hours; trucks of 2 tonnes and above may operate only from 21:00 to 06:00, unless approved in writing by the authorities. From 2027, trucks over 3.5 tonnes are banned in the zone."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp",
+      "en": "Low Emission Zone Scheme"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "support-who",
+    "faq": true,
+    "q": {
+      "vi": "Ai được nhận tiền hỗ trợ đổi sang xe điện?",
+      "en": "Who can get money to switch to an electric vehicle?"
+    },
+    "a": {
+      "vi": "Theo Nghị quyết 68/2026/NQ-HĐND, người thuộc hộ nghèo được hỗ trợ 100% giá xe mới, tối đa 20 triệu đồng, từ 1/7/2026 đến hết 2027, kèm điều kiện về cư trú và sở hữu xe cũ. Chuyển Xanh chưa xác nhận được mức hỗ trợ cho các nhóm khác trong nghị quyết cuối cùng.",
+      "en": "Under Resolution 68/2026/NQ-HĐND, members of poor households get 100% of the price of a new vehicle, up to VND 20 million, from 1 Jul 2026 to the end of 2027, subject to residence and ownership conditions. Chuyển Xanh has not confirmed support levels for other groups in the final resolution."
+    },
+    "basis": {
+      "vi": "Nghị quyết 68/2026/NQ-HĐND",
+      "en": "Resolution 68/2026/NQ-HĐND"
+    },
+    "source": "nq68"
+  },
+  {
+    "id": "support-procedure",
+    "faq": true,
+    "q": {
+      "vi": "Làm thủ tục nhận hỗ trợ ở đâu?",
+      "en": "Where do I apply for support?"
+    },
+    "a": {
+      "vi": "Chưa có câu trả lời chính thức. Tính đến 3/11/2026, quyết định quy định hồ sơ và trình tự vẫn là dự thảo của Sở Xây dựng. Trong lúc chờ, hãy giữ hóa đơn mua xe và giấy tờ xử lý xe cũ, và hỏi UBND phường nơi bạn cư trú.",
+      "en": "There is no official answer yet. As of 3 Nov 2026, the decision setting out documents and procedures is still a draft from the Department of Construction. Meanwhile, keep your purchase invoice and the papers for your old vehicle, and ask the People's Committee of your ward."
+    },
+    "basis": {
+      "vi": "Dự thảo hướng dẫn của Sở Xây dựng (chưa ban hành)",
+      "en": "Draft guidance from the Department of Construction (not yet issued)"
+    },
+    "source": "nq68"
+  },
+  {
+    "id": "after-2030",
+    "faq": true,
+    "q": {
+      "vi": "Sau năm 2030 thì sao?",
+      "en": "What happens after 2030?"
+    },
+    "a": {
+      "vi": "Thành phố tiếp tục áp dụng các biện pháp của giai đoạn 3 trong Vành đai 1, đồng thời đánh giá tác động và có thể nâng yêu cầu hoặc mở rộng phạm vi.",
+      "en": "The city will keep phase 3 measures inside Ring Road 1, review their impact, and may raise requirements or expand the area."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp",
+      "en": "Low Emission Zone Scheme"
+    },
+    "source": "lez"
+  },
+  {
+    "id": "kv1-streets",
+    "faq": false,
+    "q": {
+      "vi": "Khu vực 1 gồm những phố nào?",
+      "en": "Which streets border Zone 1?"
+    },
+    "a": {
+      "vi": "Khu vực 1 là không gian quanh Hồ Gươm và phố đi bộ, được bao bởi các phố Tràng Tiền, Hàng Khay, Lê Thái Tổ, Hàng Đào, Hàng Ngang, Hàng Buồm, Mã Mây, Hàng Bạc, Hàng Mắm, Nguyễn Hữu Huân và Lý Thái Tổ.",
+      "en": "Zone 1 covers the area around Hoan Kiem Lake and the walking streets, bounded by Trang Tien, Hang Khay, Le Thai To, Hang Dao, Hang Ngang, Hang Buom, Ma May, Hang Bac, Hang Mam, Nguyen Huu Huan and Ly Thai To."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, theo VnExpress",
+      "en": "Low Emission Zone Scheme, via VnExpress"
+    },
+    "source": "vne",
+    "keywords": "khu vuc 1 pho nao ranh gioi ho guom pho di bo pho co"
+  },
+  {
+    "id": "kv2-streets",
+    "faq": false,
+    "q": {
+      "vi": "Khu vực 2 gồm những phố nào?",
+      "en": "Which streets border Zone 2?"
+    },
+    "a": {
+      "vi": "Khu vực 2 được bao bởi các phố Hàng Đậu, Phùng Hưng, Tràng Thi, Hàng Khay, Tràng Tiền, Trần Quang Khải và Trần Nhật Duật.",
+      "en": "Zone 2 is bounded by Hang Dau, Phung Hung, Trang Thi, Hang Khay, Trang Tien, Tran Quang Khai and Tran Nhat Duat."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, theo VnExpress",
+      "en": "Low Emission Zone Scheme, via VnExpress"
+    },
+    "source": "vne",
+    "keywords": "khu vuc 2 pho nao ranh gioi"
+  },
+  {
+    "id": "kv3-streets",
+    "faq": false,
+    "q": {
+      "vi": "Khu vực 3 gồm những phố nào?",
+      "en": "Which streets border Zone 3?"
+    },
+    "a": {
+      "vi": "Khu vực 3 thuộc phường Hoàn Kiếm và Cửa Nam, áp dụng từ năm 2027, được bao bởi 14 tuyến: Nguyễn Du, Hàn Thuyên, Trần Hưng Đạo, Trần Khánh Dư, Trần Quang Khải, Trần Nhật Duật, Hàng Đậu, Cửa Đông, Lý Nam Đế, Tôn Thất Thiệp, Điện Biên Phủ, Hàng Bông, Cửa Nam và Lê Duẩn.",
+      "en": "Zone 3 covers Hoan Kiem and Cua Nam wards and applies from 2027. It is bounded by 14 streets: Nguyen Du, Han Thuyen, Tran Hung Dao, Tran Khanh Du, Tran Quang Khai, Tran Nhat Duat, Hang Dau, Cua Dong, Ly Nam De, Ton That Thiep, Dien Bien Phu, Hang Bong, Cua Nam and Le Duan."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, theo VnExpress",
+      "en": "Low Emission Zone Scheme, via VnExpress"
+    },
+    "source": "vne",
+    "keywords": "khu vuc 3 pho nao ranh gioi cua nam"
+  },
+  {
+    "id": "peak-hours",
+    "faq": false,
+    "q": {
+      "vi": "Giờ cao điểm là mấy giờ?",
+      "en": "What are peak hours?"
+    },
+    "a": {
+      "vi": "Theo đề án, giờ cao điểm là 6h–9h và 16h–19h30 hằng ngày. Ô tô trên 16 chỗ (trừ xe buýt, xe đưa đón học sinh, công nhân viên) và xe tải dưới 2 tấn chỉ được hoạt động ngoài các khung giờ này.",
+      "en": "Under the scheme, peak hours are 06:00–09:00 and 16:00–19:30 daily. Vehicles over 16 seats (except buses and school or staff shuttles) and trucks under 2 tonnes may operate only outside these hours."
+    },
+    "basis": {
+      "vi": "Đề án vùng phát thải thấp, theo Báo Công an Nhân dân",
+      "en": "Low Emission Zone Scheme, via Cong An Nhan Dan"
+    },
+    "source": "cand",
+    "keywords": "gio cao diem may gio xe khach 16 cho xe buyt"
+  },
+  {
+    "id": "support-amount",
+    "faq": false,
+    "q": {
+      "vi": "Mức hỗ trợ khi đổi sang xe điện",
+      "en": "Support amount for switching to an electric vehicle"
+    },
+    "a": {
+      "vi": "Hỗ trợ 100% giá xe mới, tính theo hóa đơn hợp pháp đã gồm VAT. Xe 18 triệu được hỗ trợ 18 triệu; xe 25 triệu được hỗ trợ 20 triệu, bạn tự trả 5 triệu. Mỗi người được hỗ trợ một lần, cho một xe.",
+      "en": "Covers 100% of the price of a new vehicle, based on a legal invoice including VAT. A VND 18M scooter gets VND 18M; a VND 25M scooter gets VND 20M and you pay VND 5M. One vehicle per person, once."
+    },
+    "basis": {
+      "vi": "Nghị quyết 68/2026/NQ-HĐND",
+      "en": "Resolution 68/2026/NQ-HĐND"
+    },
+    "source": "nq68",
+    "keywords": "muc ho tro toi da 20 trieu hoa don vat mot lan mot xe"
+  },
+  {
+    "id": "support-near-poor",
+    "faq": false,
+    "q": {
+      "vi": "Hộ cận nghèo hoặc người dân bình thường có được hỗ trợ không?",
+      "en": "Do near-poor households or ordinary residents get support?"
+    },
+    "a": {
+      "vi": "Các bản dự thảo trước từng đề xuất hỗ trợ cả hộ cận nghèo và người dân thông thường. Chuyển Xanh chưa thấy xác nhận các mức này trong nghị quyết cuối cùng, nên không ghi là quyền lợi chắc chắn. Hãy hỏi UBND phường nơi bạn cư trú.",
+      "en": "Earlier drafts proposed support for near-poor households and the general public too. Chuyển Xanh has not seen these confirmed in the final resolution, so they are not listed as guaranteed. Ask the People's Committee of your ward."
+    },
+    "basis": {
+      "vi": "Nghị quyết 68/2026/NQ-HĐND",
+      "en": "Resolution 68/2026/NQ-HĐND"
+    },
+    "source": "nq68",
+    "keywords": "can ngheo nguoi dan binh thuong du thao"
+  }
+]

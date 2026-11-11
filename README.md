@@ -2,7 +2,7 @@
 
 **Tra cứu quy định vùng phát thải thấp Hà Nội cho đúng chiếc xe, đúng nơi, đúng giờ của bạn, và tìm cách chuyển sang phương tiện xanh với chi phí thấp nhất.**
 
-[Dùng thử](https://lenaho-jenia.github.io/chuyen-xanh/) · [Nguồn dữ liệu](SOURCES.md) · [Giấy phép MIT](LICENSE)
+[Dùng thử](https://chuyen-xanh.vercel.app) · [Nguồn dữ liệu](SOURCES.md) · [Triển khai](#triển-khai) · [Giấy phép MIT](LICENSE)
 
 > Trạng thái: bản Beta. Thông tin chỉ để tham khảo, không thay thế văn bản pháp lý.
 
@@ -21,9 +21,11 @@
 7. [Giới hạn hiện tại](#giới-hạn-hiện-tại)
 8. [Đo lường hiệu quả](#đo-lường-hiệu-quả)
 9. [Lộ trình](#lộ-trình)
-10. [Công nghệ và cách chạy](#công-nghệ-và-cách-chạy)
-11. [Cập nhật dữ liệu](#cập-nhật-dữ-liệu)
-12. [Ghi công và giấy phép](#ghi-công-và-giấy-phép)
+10. [Kiến trúc](#kiến-trúc)
+11. [Chạy trên máy](#chạy-trên-máy)
+12. [Triển khai](#triển-khai)
+13. [Cập nhật dữ liệu](#cập-nhật-dữ-liệu)
+14. [Ghi công và giấy phép](#ghi-công-và-giấy-phép)
 
 ---
 
@@ -72,8 +74,8 @@ Câu hỏi của người dân ───┘──► Bảng tổng hợp ẩn da
 
 1. **Tra cứu:** người dùng chọn loại xe, chạm vào điểm đến trên bản đồ và chọn giờ. Kết quả cho biết được đi, khuyến khích hạn chế, có điều kiện hay không được đi, kèm căn cứ và lộ trình đến 2028.
 2. **Tính chi phí:** so sánh chi phí hằng tháng giữa giữ xe xăng, chuyển sang xe máy điện và đi xe buýt, metro, có tính tiền thuê pin, tiền hỗ trợ và thời gian hòa vốn.
-3. **Hỏi đáp:** trả lời theo văn bản, luôn trích nguồn, nói rõ khi chưa có quy định.
-4. **Phản hồi ngược:** câu hỏi được thống kê ẩn danh theo chủ đề, cho thấy quy định nào đang gây nhầm lẫn.
+3. **Hỏi đáp:** trợ lý AI chỉ trả lời dựa trên kho văn bản quy định, luôn trích nguồn, nói rõ khi chưa có căn cứ.
+4. **Phản hồi ngược:** mọi câu hỏi được lưu ẩn danh và tự gắn chủ đề. Mục "Câu hỏi nổi bật" tự cập nhật, và danh sách câu trợ lý chưa trả lời được cho thấy quy định nào đang gây nhầm lẫn hoặc còn thiếu.
 
 ## Tính năng
 
@@ -85,26 +87,29 @@ Câu hỏi của người dân ───┘──► Bảng tổng hợp ẩn da
 | Chi phí chuyển đổi | So sánh xe xăng, xe điện, xe buýt và metro; tính thuê pin, hỗ trợ, bán xe cũ, thời gian hòa vốn | Hoạt động |
 | Hỗ trợ đổi xe | Điều kiện theo Nghị quyết 68/2026/NQ-HĐND và danh sách giấy tờ cần giữ | Hoạt động |
 | Hỏi đáp | Câu hỏi thường gặp có tìm kiếm, mỗi câu kèm căn cứ | Hoạt động |
-| Trợ lý hỏi đáp | Khung chat tìm câu trả lời trong kho quy định, trích nguồn, từ chối khi thiếu căn cứ | Hoạt động, tìm theo từ khóa |
+| Trợ lý AI | Gemini trả lời chỉ từ các đoạn văn bản được tìm thấy trong kho (RAG), trích nguồn, từ chối khi thiếu căn cứ; tự chuyển sang tìm từ khóa khi không có mạng hoặc chưa có khóa API | Hoạt động |
 | Lưu ảnh kết quả | Ảnh khổ 4:5 để chia sẻ Facebook, Zalo | Hoạt động |
 | Nhắc trước mốc mới | File lịch .ics nhắc trước 7 ngày các mốc 1/1/2027 và 1/1/2028 | Hoạt động |
 | Song ngữ Việt – Anh | Đổi ngôn ngữ toàn trang, kể cả kết quả, ảnh chia sẻ, lịch nhắc và trợ lý; nhớ lựa chọn của người dùng | Hoạt động |
 | Link chia sẻ kết quả | Mỗi lần tra tạo một link riêng; người nhận mở link thấy đúng xe, khu vực, giờ và kết quả đó | Hoạt động |
 | Cài lên điện thoại | Cài như ứng dụng từ trình duyệt; tra cứu, tính chi phí và hỏi đáp vẫn dùng được khi mất mạng | Hoạt động (cần https) |
-| Câu hỏi nổi bật | Thống kê ẩn danh câu hỏi người dân gửi về theo tuần | Đang thu thập dữ liệu |
+| Gửi câu hỏi | Người dân gửi câu hỏi chưa có trong mục Hỏi đáp; lưu ẩn danh, tự xóa số điện thoại và email | Hoạt động |
+| Câu hỏi nổi bật | Tự thống kê chủ đề được hỏi nhiều nhất trong 14 ngày, chỉ hiện khi đủ số câu tối thiểu | Hoạt động, đang thu thập dữ liệu |
 
 ## Nguyên tắc thiết kế
 
 1. **Mọi thông tin đều có nguồn.** Mỗi kết quả và câu trả lời ghi rõ căn cứ, kèm link.
 2. **Không chắc thì nói không chắc.** Thủ tục còn là dự thảo, ranh giới chưa có dữ liệu chính thức, câu hỏi ngoài phạm vi: trang đều nói rõ thay vì đoán.
-3. **Không thu thập dữ liệu cá nhân.** Không tài khoản, không lưu tên, số điện thoại hay vị trí lên máy chủ. Vị trí hiện tại chỉ dùng trên máy người dùng để xác định khu vực.
+3. **Không thu thập dữ liệu cá nhân.** Không tài khoản. Chỉ lưu nội dung câu hỏi, không lưu tên, IP hay vị trí; số điện thoại và email trong câu hỏi bị xóa trước khi lưu. Vị trí hiện tại chỉ dùng trên máy người dùng để xác định khu vực.
 4. **Viết cho người bận rộn.** Ngôn ngữ đời thường, thiết kế cho điện thoại trước, câu trả lời ngắn và đi thẳng vào trường hợp cụ thể.
 5. **Không thay thế chính quyền.** Văn bản chính thức của thành phố luôn là căn cứ cuối cùng.
 
 ## Giới hạn hiện tại
 
 - **Ranh giới khu vực trên bản đồ là gần đúng.** Ranh giới được vẽ theo danh sách phố bao quanh mà báo chí công bố. Ở sát ranh giới, người dùng cần đối chiếu bản đồ chính thức.
-- **Trợ lý hỏi đáp chưa dùng AI.** Trợ lý chỉ trả lời được những gì đã có trong kho quy định.
+- **Trợ lý AI có thể diễn đạt sai.** Câu trả lời bị giới hạn trong kho văn bản và luôn kèm nguồn để người dùng tự kiểm tra, nhưng vẫn cần đối chiếu văn bản gốc trước khi quyết định.
+- **Kho văn bản còn nhỏ** (17 đoạn, tóm tắt từ báo chí). Bước tiếp theo là đưa văn bản gốc theo Điều, Khoản vào kho.
+- **Giới hạn tần suất đang lưu trong bộ nhớ máy chủ**, đủ cho quy mô thử nghiệm; khi có nhiều người dùng cần chuyển sang kho dùng chung như Redis.
 - **Giá xăng, điện, xe điện và vé xe buýt là số mẫu.** Người dùng có thể sửa trực tiếp trên trang.
 - **Mức hỗ trợ ngoài hộ nghèo chưa được xác nhận**, và thủ tục nhận hỗ trợ đang là dự thảo.
 - **Lớp mù trên ảnh là mô phỏng để minh họa**, không phải ảnh đo đạc thực tế.
@@ -117,60 +122,102 @@ Các chỉ số dưới đây được báo cáo bằng số liệu thật, khô
 | --- | --- |
 | Mức hiểu đúng quy định | Hỏi 3 câu kiểm tra trước và sau khi người dùng thử sản phẩm |
 | Thời gian tìm ra câu trả lời | Quan sát trực tiếp khi người dùng thử |
-| Số câu hỏi và nhóm chủ đề | Biểu mẫu thu câu hỏi, tổng hợp hằng tuần |
-| Tỉ lệ câu hỏi trợ lý trả lời được | Đối chiếu câu hỏi với kho quy định |
+| Số câu hỏi và nhóm chủ đề | Bảng `questions` trên Supabase, tự thống kê |
+| Tỉ lệ câu hỏi trợ lý trả lời được | Cột `answered` trong bảng `questions`; câu chưa trả lời được xem ở `unanswered_questions` |
 | Mức độ quay lại và chia sẻ | Lượt dùng tính năng lưu ảnh, nhắc lịch |
 
 ## Lộ trình
 
 | Giai đoạn | Nội dung | Trạng thái |
 | --- | --- | --- |
-| Web Beta | Tra cứu, bản đồ, chi phí, hỗ trợ, hỏi đáp, trợ lý, ảnh kết quả, nhắc lịch | Đã xong |
+| Web Beta | Tra cứu, bản đồ, chi phí, hỗ trợ, hỏi đáp, ảnh kết quả, nhắc lịch, song ngữ, cài lên điện thoại | Đã xong |
+| Trợ lý AI và dữ liệu hai chiều | Next.js, trợ lý Gemini có trích nguồn, lưu và thống kê câu hỏi trên Supabase | Đã xong |
 | Kiểm chứng | Phỏng vấn shipper, tiểu thương, cư dân Vành đai 1; thu câu hỏi thật | Đang làm |
-| Trợ lý AI qua Zalo | Mô hình ngôn ngữ trả lời theo đúng Điều, Khoản của văn bản gốc, luôn trích dẫn | Tiếp theo |
+| Văn bản gốc và Zalo | Đưa văn bản gốc theo Điều, Khoản vào kho; mở trợ lý qua Zalo OA | Tiếp theo |
 | Thí điểm | Dùng ranh giới chính thức; gửi bảng tổng hợp câu hỏi định kỳ cho một phường | Sau đó |
 | Mở rộng | Vành đai 2 (từ 2028), Vành đai 3 và các đô thị khác áp dụng vùng phát thải thấp | Dài hạn |
 
-## Công nghệ và cách chạy
+## Kiến trúc
 
-- HTML, CSS, JavaScript thuần trong một file `index.html`, không cần bước build.
-- Bản đồ: [Leaflet](https://leafletjs.com/), nền bản đồ [OpenStreetMap](https://www.openstreetmap.org/copyright) và [CARTO](https://carto.com/attributions); tìm địa chỉ bằng [Nominatim](https://nominatim.org/).
-- Cài như ứng dụng (PWA): `manifest.webmanifest` và `sw.js` lưu trang, phông chữ và ảnh để mở lại khi mất mạng. Ô bản đồ và tìm phố luôn lấy trực tiếp.
-- Song ngữ: tiếng Việt là bản gốc, tiếng Anh nằm trong từ điển `EN` của `index.html`. Thêm ngôn ngữ mới bằng cách tạo một từ điển tương tự.
-- Link chia sẻ dạng `?v=xm_app&a=kv2&d=2027-03-14&t=09:00&lang=en`, trong đó `v` là loại xe (`xm_xang`, `xm_app`, `xm_dien`, `oto`), `a` là khu vực (`kv1`, `kv2`, `kv3`, `vd1`, `out`).
-- Triển khai miễn phí bằng GitHub Pages.
+```
+Trình duyệt (Next.js, React)                  Máy chủ Next.js (Vercel)                Dịch vụ ngoài
+──────────────────────────                    ─────────────────────────               ─────────────
+Tra cứu, bản đồ, chi phí  ── chạy trên máy, đọc data/*.json, dùng được khi mất mạng
+Trợ lý           ── POST /api/ask ──────────► 1. Tìm đoạn liên quan trong kho  
+                                              2. Gửi đúng các đoạn đó ───────────────► Gemini
+                                              3. Chỉ giữ nguồn có thật trong kho ◄────
+                                              4. Lưu câu hỏi ẩn danh ─────────────────► Supabase
+Gửi câu hỏi      ── POST /api/questions ────► Xóa SĐT, email, gắn chủ đề, lưu ─────► Supabase
+Câu hỏi nổi bật  ── GET /api/top-questions ─► Đếm theo chủ đề 14 ngày, CDN giữ 10 phút ◄ Supabase
+```
 
-**Chạy trên máy:** mở `index.html` bằng trình duyệt. Cần kết nối mạng để tải ảnh, phông chữ và bản đồ. Tính năng "Vị trí của tôi" cần trang chạy qua https.
+| Lớp | Công nghệ |
+| --- | --- |
+| Giao diện | [Next.js](https://nextjs.org/) 16 (App Router), React 19, TypeScript, CSS thuần |
+| Bản đồ | [Leaflet](https://leafletjs.com/), nền [OpenStreetMap](https://www.openstreetmap.org/copyright) và [CARTO](https://carto.com/attributions), tìm địa chỉ bằng [Nominatim](https://nominatim.org/) |
+| Trợ lý AI | Google Gemini API, đầu ra JSON theo lược đồ, tìm đoạn văn bản bằng TF-IDF trên tiếng Việt bỏ dấu và tiếng Anh |
+| Cơ sở dữ liệu | [Supabase](https://supabase.com/) (PostgreSQL), bật RLS, chỉ máy chủ được đọc ghi |
+| Ứng dụng di động | PWA: cài lên màn hình chính, dùng khi mất mạng |
+| Kiểm thử | [Vitest](https://vitest.dev/): 400 tình huống đối chiếu với bản đầu tiên, tìm kiếm, bảo vệ dữ liệu, lọc nguồn AI |
+
+**Chạy được ở mọi mức cấu hình.** Thiếu khóa Gemini, trợ lý tự tìm theo từ khóa. Thiếu Supabase, ô gửi câu hỏi tự ẩn và mục câu hỏi nổi bật hiện trạng thái chờ. Tra cứu, bản đồ và tính chi phí không cần máy chủ.
+
+## Chạy trên máy
+
+Cần Node.js 20 trở lên.
+
+```bash
+npm install
+cp .env.example .env.local   # điền khóa nếu có, để trống vẫn chạy
+npm run dev                  # mở http://localhost:3000
+npm test                     # chạy kiểm thử
+```
 
 **Cấu trúc thư mục:**
 
 ```
 chuyen-xanh/
-├── index.html            Toàn bộ giao diện, dữ liệu quy định, bản dịch và logic
-├── manifest.webmanifest  Thông tin để cài lên điện thoại
-├── sw.js                 Lưu trang để dùng khi mất mạng
-├── icons/                Biểu tượng ứng dụng
-├── README.md
-├── SOURCES.md            Nguồn dữ liệu, ngày cập nhật và việc cần bổ sung
-├── LICENSE
-└── .gitignore
+├── data/                   Dữ liệu, sửa ở đây là trang tự cập nhật
+│   ├── rules.json          Xe, khu vực, giai đoạn, bảng kết quả theo xe và giai đoạn
+│   ├── zones.json          Ranh giới khu vực trên bản đồ (gần đúng)
+│   ├── knowledge.json      Kho văn bản cho Hỏi đáp và trợ lý AI
+│   ├── documents.json      Danh sách giấy tờ nên giữ
+│   └── sources.json        Nguồn và ngày
+├── messages/               Chữ trên giao diện: vi.json, en.json
+├── src/
+│   ├── app/                Trang và API (ask, questions, top-questions)
+│   ├── components/         Các phần của trang
+│   └── lib/                Logic quy định, tìm kiếm, chi phí, chia sẻ, máy chủ
+├── supabase/schema.sql     Tạo bảng câu hỏi
+├── public/                 Biểu tượng, manifest, service worker
+├── tests/                  Kiểm thử
+└── SOURCES.md              Nguồn dữ liệu và việc cần bổ sung
 ```
+
+## Triển khai
+
+Toàn bộ dùng gói miễn phí.
+
+1. **Supabase:** tạo project tại [supabase.com](https://supabase.com/), mở SQL Editor, chạy toàn bộ `supabase/schema.sql`. Vào Project Settings → API Keys, lấy Project URL và secret key.
+2. **Gemini:** tạo khóa API tại [Google AI Studio](https://aistudio.google.com/apikey).
+3. **Vercel:** đăng nhập [vercel.com](https://vercel.com/) bằng GitHub, Add New → Project → chọn repo `chuyen-xanh`. Ở Environment Variables, nhập `GEMINI_API_KEY`, `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, rồi Deploy.
+4. Mỗi lần đẩy code lên nhánh `main`, Vercel tự triển khai lại.
+
+Khóa bí mật chỉ nằm trên Vercel và trong `.env.local` trên máy, **không bao giờ đưa lên GitHub**.
 
 ## Cập nhật dữ liệu
 
-Mọi dữ liệu có thể thay đổi đều nằm trong phần `<script>` của `index.html`:
-
 | Muốn cập nhật | Sửa ở |
 | --- | --- |
-| Link biểu mẫu, ngày cập nhật | `CONFIG` |
-| Quy định theo xe, khu vực, giai đoạn | `VEHICLES`, `AREAS`, hàm `evaluate` |
-| Ranh giới khu vực trên bản đồ | `ZONES` |
-| Câu hỏi thường gặp, kho của trợ lý | `FAQ`, `KB` |
-| Thống kê câu hỏi nổi bật | `QUESTION_LOG`, `QUESTION_PERIOD` (chỉ điền số liệu thật) |
-| Bản dịch tiếng Anh | từ điển `EN`: khóa là câu tiếng Việt, sửa câu gốc thì sửa cả khóa |
-| Giá mẫu trong máy tính chi phí | thuộc tính `value` của các ô `gasPrice`, `elecPrice`, `evPrice`, `busPass` |
+| Ngày cập nhật quy định | `updated` trong `data/rules.json` |
+| Quy định theo xe, khu vực, giai đoạn | `vehicles`, `areas`, `matrix`, `outcomes` trong `data/rules.json` |
+| Ranh giới khu vực trên bản đồ | `data/zones.json` |
+| Câu hỏi thường gặp, kho của trợ lý | `data/knowledge.json` (`faq: true` thì hiện ở mục Hỏi đáp) |
+| Chữ trên giao diện | `messages/vi.json`, `messages/en.json` |
+| Giá mẫu trong máy tính chi phí | `DEFAULT_COST` trong `src/lib/cost.ts` |
+| Số câu tối thiểu để hiện câu hỏi nổi bật | biến môi trường `TOP_QUESTIONS_MIN` (mặc định 10) |
 
-Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md), và đổi `VERSION` trong `sw.js` để người đã cài ứng dụng nhận bản mới.
+Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md), chạy `npm test`, và đổi `VERSION` trong `public/sw.js` để người đã cài ứng dụng nhận bản mới. Bản web tĩnh đầu tiên được giữ ở tag [`v1-static`](../../tree/v1-static).
 
 ## Ghi công và giấy phép
 

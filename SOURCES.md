@@ -1,6 +1,6 @@
 # Nguồn dữ liệu
 
-Kiểm tra lại các nguồn này trước mỗi lần cập nhật, và sửa `CONFIG.updated` trong `index.html`.
+Kiểm tra lại các nguồn này trước mỗi lần cập nhật, và sửa `updated` trong `data/rules.json`.
 
 | Nội dung | Nguồn | Ngày |
 | --- | --- | --- |
