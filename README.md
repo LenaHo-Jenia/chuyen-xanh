@@ -88,6 +88,9 @@ Câu hỏi của người dân ───┘──► Bảng tổng hợp ẩn da
 | Trợ lý hỏi đáp | Khung chat tìm câu trả lời trong kho quy định, trích nguồn, từ chối khi thiếu căn cứ | Hoạt động, tìm theo từ khóa |
 | Lưu ảnh kết quả | Ảnh khổ 4:5 để chia sẻ Facebook, Zalo | Hoạt động |
 | Nhắc trước mốc mới | File lịch .ics nhắc trước 7 ngày các mốc 1/1/2027 và 1/1/2028 | Hoạt động |
+| Song ngữ Việt – Anh | Đổi ngôn ngữ toàn trang, kể cả kết quả, ảnh chia sẻ, lịch nhắc và trợ lý; nhớ lựa chọn của người dùng | Hoạt động |
+| Link chia sẻ kết quả | Mỗi lần tra tạo một link riêng; người nhận mở link thấy đúng xe, khu vực, giờ và kết quả đó | Hoạt động |
+| Cài lên điện thoại | Cài như ứng dụng từ trình duyệt; tra cứu, tính chi phí và hỏi đáp vẫn dùng được khi mất mạng | Hoạt động (cần https) |
 | Câu hỏi nổi bật | Thống kê ẩn danh câu hỏi người dân gửi về theo tuần | Đang thu thập dữ liệu |
 
 ## Nguyên tắc thiết kế
@@ -132,6 +135,9 @@ Các chỉ số dưới đây được báo cáo bằng số liệu thật, khô
 
 - HTML, CSS, JavaScript thuần trong một file `index.html`, không cần bước build.
 - Bản đồ: [Leaflet](https://leafletjs.com/), nền bản đồ [OpenStreetMap](https://www.openstreetmap.org/copyright) và [CARTO](https://carto.com/attributions); tìm địa chỉ bằng [Nominatim](https://nominatim.org/).
+- Cài như ứng dụng (PWA): `manifest.webmanifest` và `sw.js` lưu trang, phông chữ và ảnh để mở lại khi mất mạng. Ô bản đồ và tìm phố luôn lấy trực tiếp.
+- Song ngữ: tiếng Việt là bản gốc, tiếng Anh nằm trong từ điển `EN` của `index.html`. Thêm ngôn ngữ mới bằng cách tạo một từ điển tương tự.
+- Link chia sẻ dạng `?v=xm_app&a=kv2&d=2027-03-14&t=09:00&lang=en`, trong đó `v` là loại xe (`xm_xang`, `xm_app`, `xm_dien`, `oto`), `a` là khu vực (`kv1`, `kv2`, `kv3`, `vd1`, `out`).
 - Triển khai miễn phí bằng GitHub Pages.
 
 **Chạy trên máy:** mở `index.html` bằng trình duyệt. Cần kết nối mạng để tải ảnh, phông chữ và bản đồ. Tính năng "Vị trí của tôi" cần trang chạy qua https.
@@ -140,9 +146,12 @@ Các chỉ số dưới đây được báo cáo bằng số liệu thật, khô
 
 ```
 chuyen-xanh/
-├── index.html    Toàn bộ giao diện, dữ liệu quy định và logic
+├── index.html            Toàn bộ giao diện, dữ liệu quy định, bản dịch và logic
+├── manifest.webmanifest  Thông tin để cài lên điện thoại
+├── sw.js                 Lưu trang để dùng khi mất mạng
+├── icons/                Biểu tượng ứng dụng
 ├── README.md
-├── SOURCES.md    Nguồn dữ liệu, ngày cập nhật và việc cần bổ sung
+├── SOURCES.md            Nguồn dữ liệu, ngày cập nhật và việc cần bổ sung
 ├── LICENSE
 └── .gitignore
 ```
@@ -158,9 +167,10 @@ Mọi dữ liệu có thể thay đổi đều nằm trong phần `<script>` c�
 | Ranh giới khu vực trên bản đồ | `ZONES` |
 | Câu hỏi thường gặp, kho của trợ lý | `FAQ`, `KB` |
 | Thống kê câu hỏi nổi bật | `QUESTION_LOG`, `QUESTION_PERIOD` (chỉ điền số liệu thật) |
+| Bản dịch tiếng Anh | từ điển `EN`: khóa là câu tiếng Việt, sửa câu gốc thì sửa cả khóa |
 | Giá mẫu trong máy tính chi phí | thuộc tính `value` của các ô `gasPrice`, `elecPrice`, `evPrice`, `busPass` |
 
-Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md).
+Mỗi lần cập nhật, ghi nguồn và ngày vào [SOURCES.md](SOURCES.md), và đổi `VERSION` trong `sw.js` để người đã cài ứng dụng nhận bản mới.
 
 ## Ghi công và giấy phép
 
