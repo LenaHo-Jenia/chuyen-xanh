@@ -1,0 +1,14 @@
+# Bí mật, khóa API
+.env
+.env.*
+
+# Dữ liệu phỏng vấn thô (có thông tin cá nhân) – KHÔNG đưa lên GitHub
+interviews-raw/
+*.m4a
+*.mp3
+
+# File rác của hệ điều hành và công cụ
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
