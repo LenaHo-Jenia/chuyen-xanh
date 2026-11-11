@@ -14,7 +14,8 @@
     "install": "Install app",
     "language": "Language",
     "installed": "Chuyển Xanh is installed.",
-    "offline": "You're offline. The check, cost calculator and FAQ still work; the map, street search and AI assistant need a connection."
+    "offline": "You're offline. The check, cost calculator and FAQ still work; the map, street search and AI assistant need a connection.",
+    "noscript": "Turn on JavaScript to use the map, the assistant and the share buttons."
   },
   "hero": {
     "title": "Riding into central Hanoi tonight? Check if your vehicle is allowed.",

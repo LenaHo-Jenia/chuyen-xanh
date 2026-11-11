@@ -14,7 +14,8 @@
     "install": "Cài ứng dụng",
     "language": "Ngôn ngữ",
     "installed": "Đã cài Chuyển Xanh lên máy.",
-    "offline": "Bạn đang ngoại tuyến. Tra cứu, tính chi phí và hỏi đáp vẫn dùng được; bản đồ, tìm phố và trợ lý AI cần có mạng."
+    "offline": "Bạn đang ngoại tuyến. Tra cứu, tính chi phí và hỏi đáp vẫn dùng được; bản đồ, tìm phố và trợ lý AI cần có mạng.",
+    "noscript": "Hãy bật JavaScript để dùng bản đồ, trợ lý và các nút chia sẻ."
   },
   "hero": {
     "title": "Tối nay đi phố, xe mình có bị cấm không?",

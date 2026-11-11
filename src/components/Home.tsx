@@ -76,7 +76,7 @@ export default function Home() {
       <Footer />
       <Chat />
       {toastMsg && <div className="toast" role="status">{toastMsg}</div>}
-      <noscript><p style={{ padding: 16 }}>{t("nav.offline")}</p></noscript>
+      <noscript><p style={{ padding: 16 }}>{t("nav.noscript")}</p></noscript>
     </>
   );
 }
