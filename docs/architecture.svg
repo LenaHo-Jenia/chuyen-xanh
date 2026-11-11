@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="740" viewBox="0 0 1280 740" role="img" aria-labelledby="t d" font-family="-apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title id="t">Kiến trúc Chuyển Xanh</title>
+  <desc id="d">Tra cứu, bản đồ và tính chi phí chạy trên trình duyệt từ dữ liệu JSON đóng gói sẵn. Máy chủ Next.js trên Vercel có ba API: trợ lý RAG gọi Gemini, lưu câu hỏi và thống kê câu hỏi nổi bật trên Supabase.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#3d4743"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#1f5f4f"/>
+    </marker>
+    <style>
+      .h{font-size:14px;font-weight:700;fill:#3d4743}
+      .ct{font-size:15px;font-weight:700;fill:#12352d}
+      .cs{font-size:12.5px;fill:#59625e}
+      .lb{font-size:12px;fill:#3d4743}
+      .note{font-size:12px;fill:#59625e}
+      .card{fill:#fff;stroke:#d9dedb;stroke-width:1.2}
+      .ln{stroke:#3d4743;stroke-width:1.6;fill:none}
+      .dash{stroke:#1f5f4f;stroke-width:1.6;fill:none;stroke-dasharray:6 5}
+      .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:12.5px;font-weight:600;fill:#12352d}
+    </style>
+  </defs>
+
+  <rect width="1280" height="740" rx="16" fill="#ffffff"/>
+
+  <!-- Tiêu đề -->
+  <g transform="translate(40 50)">
+    <path d="M0 20C0 10 6 4 16 4c0 10-6 16-16 16Z" transform="translate(0 -18) scale(1.1)" fill="#1f5f4f"/>
+    <text x="30" y="0" font-size="22" font-weight="800" fill="#12352d">Kiến trúc Chuyển Xanh</text>
+    <text x="30" y="24" font-size="13.5" fill="#59625e">Tra cứu chạy ngay trên máy người dùng. Máy chủ chỉ lo trợ lý AI và dữ liệu câu hỏi.</text>
+  </g>
+
+  <!-- Ba cột -->
+  <text class="h" x="40" y="114">Trình duyệt, ứng dụng cài lên điện thoại</text>
+  <text class="h" x="470" y="114">Máy chủ Next.js trên Vercel</text>
+  <text class="h" x="940" y="114">Dịch vụ ngoài</text>
+  <rect x="40" y="128" width="290" height="552" rx="12" fill="#f4f5f3"/>
+  <rect x="470" y="128" width="330" height="552" rx="12" fill="#ffffff" stroke="#c9d0cc" stroke-width="1.2"/>
+  <rect x="940" y="128" width="300" height="552" rx="12" fill="#f4f5f3"/>
+
+  <!-- Cột trái -->
+  <rect class="card" x="56" y="150" width="258" height="64" rx="8"/>
+  <text class="ct" x="72" y="177">Tra cứu và bản đồ</text>
+  <text class="cs" x="72" y="198">Xe, nơi, giờ ra kết quả kèm căn cứ</text>
+
+  <rect class="card" x="56" y="230" width="258" height="64" rx="8"/>
+  <text class="ct" x="72" y="257">Tính chi phí đổi xe</text>
+  <text class="cs" x="72" y="278">Xe xăng, xe điện, buýt và metro</text>
+
+  <rect class="card" x="56" y="353" width="258" height="64" rx="8"/>
+  <text class="ct" x="72" y="380">Trợ lý hỏi đáp</text>
+  <text class="cs" x="72" y="401">Mất mạng: tìm từ khóa ngay trên máy</text>
+
+  <rect class="card" x="56" y="460" width="258" height="64" rx="8"/>
+  <text class="ct" x="72" y="487">Gửi câu hỏi</text>
+  <text class="cs" x="72" y="508">Ô cuối mục Hỏi đáp</text>
+
+  <rect class="card" x="56" y="544" width="258" height="64" rx="8"/>
+  <text class="ct" x="72" y="571">Câu hỏi nổi bật</text>
+  <text class="cs" x="72" y="592">Chủ đề được hỏi nhiều trong 14 ngày</text>
+
+  <text class="note" x="56" y="642">Song ngữ Việt và Anh, link chia sẻ kết quả,</text>
+  <text class="note" x="56" y="660">mở lại được khi mất mạng</text>
+
+  <!-- Cột giữa -->
+  <rect x="486" y="190" width="298" height="110" rx="8" fill="#eef4f1" stroke="#1f5f4f" stroke-width="1.2" stroke-dasharray="6 5"/>
+  <text class="ct" x="502" y="216">Dữ liệu quy định</text>
+  <text class="mono" x="502" y="242">rules.json</text><text class="cs" x="612" y="242">xe, khu vực, giai đoạn</text>
+  <text class="mono" x="502" y="264">zones.json</text><text class="cs" x="612" y="264">ranh giới trên bản đồ</text>
+  <text class="mono" x="502" y="286">knowledge.json</text><text class="cs" x="626" y="286">kho văn bản có nguồn</text>
+
+  <rect class="card" x="486" y="330" width="298" height="110" rx="8" stroke="#1f5f4f" stroke-width="1.6"/>
+  <text class="mono" x="502" y="356" font-size="14">/api/ask</text><text class="cs" x="572" y="356">trợ lý AI có trích nguồn</text>
+  <circle cx="510" cy="377" r="8" fill="#1f5f4f"/><text x="510" y="381.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text class="cs" x="525" y="381.5" fill="#1b1f1d">Tìm các đoạn liên quan trong kho</text>
+  <circle cx="510" cy="399" r="8" fill="#1f5f4f"/><text x="510" y="403.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text class="cs" x="525" y="403.5" fill="#1b1f1d">Gửi đúng các đoạn đó cho Gemini</text>
+  <circle cx="510" cy="421" r="8" fill="#1f5f4f"/><text x="510" y="425.5" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text class="cs" x="525" y="425.5" fill="#1b1f1d">Bỏ nguồn không có trong kho</text>
+
+  <rect class="card" x="486" y="460" width="298" height="64" rx="8"/>
+  <text class="mono" x="502" y="487" font-size="14">/api/questions</text>
+  <text class="cs" x="502" y="508">Xóa số điện thoại, email; gắn chủ đề</text>
+
+  <rect class="card" x="486" y="544" width="298" height="64" rx="8"/>
+  <text class="mono" x="502" y="571" font-size="14">/api/top-questions</text>
+  <text class="cs" x="502" y="592">Đếm theo chủ đề, CDN giữ 10 phút</text>
+
+  <text class="note" x="486" y="642">Khóa API chỉ nằm trong biến môi trường Vercel.</text>
+  <text class="note" x="486" y="660">Thiếu khóa nào, tính năng đó tự tắt.</text>
+
+  <!-- Cột phải -->
+  <rect class="card" x="956" y="150" width="268" height="64" rx="8"/>
+  <text class="ct" x="972" y="177">OpenStreetMap, CARTO</text>
+  <text class="cs" x="972" y="198">Ô bản đồ; tìm phố bằng Nominatim</text>
+
+  <rect class="card" x="956" y="340" width="268" height="90" rx="8"/>
+  <text class="ct" x="972" y="367">Google Gemini</text>
+  <text class="cs" x="972" y="388">Trả về JSON theo lược đồ:</text>
+  <text class="mono" x="972" y="410" font-weight="500" fill="#59625e">answered, answer, sources</text>
+
+  <rect class="card" x="956" y="470" width="268" height="138" rx="8"/>
+  <text class="ct" x="972" y="497">Supabase (PostgreSQL)</text>
+  <text class="cs" x="972" y="520">Bảng questions: nội dung, chủ đề,</text>
+  <text class="cs" x="972" y="538">ngôn ngữ, đã trả lời hay chưa</text>
+  <text class="cs" x="972" y="562">Bật RLS: trình duyệt không đọc</text>
+  <text class="cs" x="972" y="580">được, chỉ máy chủ đọc ghi</text>
+
+  <text class="note" x="956" y="642">Không lưu tên, IP hay vị trí.</text>
+  <text class="note" x="956" y="660">Vị trí chỉ dùng trên máy để biết khu vực.</text>
+
+  <!-- Mũi tên -->
+  <!-- bản đồ: gọi thẳng -->
+  <path class="ln" d="M314 170H952" marker-end="url(#a)"/>
+  <rect x="525" y="153" width="220" height="16" fill="#fff"/>
+  <text class="lb" x="635" y="165" text-anchor="middle">gọi thẳng, không qua máy chủ</text>
+
+  <!-- dữ liệu đóng gói -->
+  <path class="dash" d="M486 262H318" marker-end="url(#ag)"/>
+  <text class="lb" x="400" y="254" text-anchor="middle" fill="#1f5f4f">đóng gói vào trang</text>
+  <path class="dash" d="M635 300V326" marker-end="url(#ag)"/>
+  <text class="lb" x="645" y="318" fill="#1f5f4f">dùng chung</text>
+
+  <!-- trợ lý -->
+  <path class="ln" d="M314 385H482" marker-end="url(#a)"/>
+  <text class="lb" x="400" y="377" text-anchor="middle">câu hỏi</text>
+  <path class="ln" d="M784 368H952" marker-end="url(#a)"/>
+  <text class="lb" x="870" y="360" text-anchor="middle">các đoạn + câu hỏi</text>
+  <path class="ln" d="M956 404H788" marker-end="url(#a)"/>
+  <text class="lb" x="870" y="421" text-anchor="middle">trả lời + id nguồn</text>
+
+  <!-- gửi câu hỏi -->
+  <path class="ln" d="M314 492H482" marker-end="url(#a)"/>
+  <text class="lb" x="400" y="484" text-anchor="middle">câu hỏi</text>
+
+  <!-- lưu ẩn danh -->
+  <path class="ln" d="M784 434H830V510H952" marker-end="url(#a)"/>
+  <path class="ln" d="M784 492H830"/>
+  <text class="lb" x="893" y="502" text-anchor="middle">lưu ẩn danh</text>
+
+  <!-- thống kê -->
+  <path class="ln" d="M956 576H788" marker-end="url(#a)"/>
+  <text class="lb" x="870" y="568" text-anchor="middle">đếm 14 ngày</text>
+  <path class="ln" d="M486 576H318" marker-end="url(#a)"/>
+  <text class="lb" x="400" y="568" text-anchor="middle">chủ đề nổi bật</text>
+
+  <!-- Chú thích -->
+  <g transform="translate(40 712)">
+    <path class="ln" d="M0 0H36" marker-end="url(#a)"/>
+    <text class="note" x="46" y="4">gọi qua mạng</text>
+    <path class="dash" d="M150 0H186" marker-end="url(#ag)"/>
+    <text class="note" x="196" y="4">dữ liệu đóng gói sẵn, chạy cả khi mất mạng</text>
+  </g>
+</svg>

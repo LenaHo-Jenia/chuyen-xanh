@@ -139,17 +139,7 @@ Các chỉ số dưới đây được báo cáo bằng số liệu thật, khô
 
 ## Kiến trúc
 
-```
-Trình duyệt (Next.js, React)                  Máy chủ Next.js (Vercel)                Dịch vụ ngoài
-──────────────────────────                    ─────────────────────────               ─────────────
-Tra cứu, bản đồ, chi phí  ── chạy trên máy, đọc data/*.json, dùng được khi mất mạng
-Trợ lý           ── POST /api/ask ──────────► 1. Tìm đoạn liên quan trong kho  
-                                              2. Gửi đúng các đoạn đó ───────────────► Gemini
-                                              3. Chỉ giữ nguồn có thật trong kho ◄────
-                                              4. Lưu câu hỏi ẩn danh ─────────────────► Supabase
-Gửi câu hỏi      ── POST /api/questions ────► Xóa SĐT, email, gắn chủ đề, lưu ─────► Supabase
-Câu hỏi nổi bật  ── GET /api/top-questions ─► Đếm theo chủ đề 14 ngày, CDN giữ 10 phút ◄ Supabase
-```
+![Sơ đồ kiến trúc Chuyển Xanh: tra cứu chạy trên trình duyệt, máy chủ Next.js trên Vercel gọi Gemini và Supabase](docs/architecture.svg)
 
 | Lớp | Công nghệ |
 | --- | --- |
